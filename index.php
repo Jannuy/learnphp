@@ -1,12 +1,13 @@
 <?php
-$test = 'yolo';
-$test = 'yolo' . 'life';
-$test = $test . 'thug';
-$test .= 'life';
-$name = 'kaspar';
-$age = 33;
-$test = $name . ' is ' . $age . ' years old';
-$test = "$name is $age years old";
-$test = 'don/'t';
-$test
+$test = 10 > 5;
+$test = 10 < 5;
+$test = 10 == 10;
+$test = 10 <= 10;
+$test = 10 >= 10;
+$test = 10 == '10';
+$test = 10 === '10';
+$test = 10 != 5;
+$test = 10 !== '10';
+$test = 0 == false;
+// https://www.php.net/manual/en/language.operators.comparison.php
 var_dump($test);
