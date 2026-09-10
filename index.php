@@ -1,35 +1,15 @@
 <?php
 
-function hello(): void {
-    var_dump("Hello, World!");
+$test = function (){
+    var_dump('test');
 }
 
-hello();
+var_dump($test);
 
-function helloName($name="Nameless") {
-    var_dump("Hello, " . $name . "!");
-}
+$test();
+call_user_func($test);
 
-helloName("Alice, 66");
-helloName();
+$numbers = [1, 2, 3, 4, 5];
 
-function square(int $a): int {
-    if ($a < 0) {
-        return null;
-    } else {
-        return $a * $a;
-    }
-}
-
-$answer = square(5);
-var_dump($answer);
-var_dump(square(10));
-
-function recursion($i) {
-    if ($i < 0) {
-        var_dump($i);
-        recursion($i+1);
-    }
-}
-
-recursion(0);
+$squares = array_map(fn ($n) => $n * $n, $numbers);
+var_dump($squares);
