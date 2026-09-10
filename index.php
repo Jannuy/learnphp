@@ -13,17 +13,23 @@ class Box {
     }
 }
 
-$box1 = new Box();
-$box1->width = 10;
-$box1->height = 5;
-$box1->length = 15;
-$box1->open();
-var_dump($box1);
+$num1 = 1;
+$num2 = $num1;
+$num1 = 2;
+var_dump($num1, $num2);
 
-$box2 = new Box();
-$box2->width = 20;
-$box2->height = 10;
-$box2->length = 30;
-$box2->open();
-var_dump($box2);
-var_dump($box1);
+$box1 = new Box();
+$box1 ->width = 1;
+$box2 = $box1;
+$box1->width = 2;
+var_dump($box1->width, $box2->width);
+
+$numbers  = [1, 2, 3];
+for ($i = 0; $i < count($numbers); $i++) {
+    $numbers[$i] = $numbers[$i] * 2;
+}
+
+foreach ($numbers as $n) {
+    $n = $n * 2;
+}
+var_dump($numbers);
