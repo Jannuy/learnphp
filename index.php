@@ -1,33 +1,26 @@
 <?php
 
-class  box {
-    public $width;
-    public $height;
-    public $length;
-    public $isOpen = false;
-    public  $hasBeenOpened = false;
+public $isOpen = false;
+publis $hasBeenOpened = false;
 
-    public function __construct($w, $h, $l) {
-        $this -> isOpen = true;
-    }
-
-    public function __toString() {
-        return 'im a box and im open';
-    }
-
-    public function __destruct() {
-        var_dump('box is being destroyed');
-    }
+public function __construct (public $width, public $height, public $strength) {
 
 }
 
-function test() {
-    $box2 = new box(10, 20, 30);
+public function open() {
+    $this->isOpen = true;
 }
-test();
 
-$box1 = new box(10, 20, 30);
-$box1 = 10;
-var_dump($box1);
-echo $box1;
-$box1->new = 'lol';
+public function volume() {
+    return $this->width * $this->height * $this->length;
+}
+
+class MetalBox extends Box {
+    public function __construct($width, $height, $strength) {
+        parent::__construct($width, $height, $strength);
+    }
+}
+
+$metal1 = new MetalBox(10, 20, 30);
+$metal1 ->weightPerUnit = 5;
+var_dump($metal1->mass(), $metal1);
