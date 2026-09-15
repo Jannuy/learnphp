@@ -16,8 +16,23 @@ public function volume() {
 }
 
 class MetalBox extends Box {
+    use HasColor;
     public function __construct($width, $height, $strength) {
         parent::__construct($width, $height, $strength);
+    }
+}
+
+trait HasColor {
+    public $color;
+    public function showColor() {
+        return $this->color;
+    }
+}
+
+trait HaSmell {
+    public $smell;
+    public function sniff() {
+        return $this->smell;
     }
 }
 
