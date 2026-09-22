@@ -1,6 +1,6 @@
 <?php
 
-$titile = 'U.S'
+$titile = 'U.S';
 
 $test = 'asdasd';
 if(isset($test)) {
@@ -37,10 +37,9 @@ $posts = [
     'body' => 'Some World content 4',
   ],
 ];
+?>
 
-
-
-<?php include __DIR__ . '/partials/header.php' ?>;
+<?php include __DIR__ . '/partials/header.php' ?>
 <main class="container">
   <?php include __DIR__ . '/partials/hero.php' ?>
   <?php include __DIR__ . '/partials/featured.php' ?>
