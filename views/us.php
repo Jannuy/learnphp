@@ -1,15 +1,7 @@
 <?php
 
-$titile = 'U.S';
+$title = 'U.S';
 
-$test = 'asdasd';
-if(isset($test)) {
-  $var = $test;
-} else {
-  $var = '';
-}
-$var = isset($test) ? $test : '';
-$var = $test ?? '';
 
 $posts = [
   [
@@ -41,7 +33,6 @@ $posts = [
 
 <?php include __DIR__ . '/partials/header.php' ?>
 <main class="container">
-  <?php include __DIR__ . '/partials/hero.php' ?>
   <?php include __DIR__ . '/partials/featured.php' ?>
 
   <div class="row g-5">
