@@ -9,6 +9,24 @@ var_dump(...$values);
 echo '</pre>';
 }
 
+spl_autoload_register(function ($class){
+    $class = substr($class, 4);
+    dump($class);
+    require_once __DIR__ . '/../src/$class.php'
+});
+
+
+
+use App\Controllers\PublicController as PC;
+
+$router = new App\Router();
+$db = new App\DB();
+$controller = new PC();
+$controller = new PC();
+$controller = new PC();
+$controller = new PC();
+$controller = new PC();
+dump($router, $db, $controller);
 
 switch($_SERVER['REQUEST_URI']){
     case '/':
