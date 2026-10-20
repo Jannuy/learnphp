@@ -11,17 +11,28 @@ class DB
 
     public function __construct()
     {
-        $servername = "localhost:33061";
+        $servername = "localhost:33062";
+        $port = 33062;
         $username = "root";
         $password = "example";
         $dbname = "learnphp";
 
+               if (!extension_loaded('pdo_mysql')) {
+            throw new \RuntimeException(
+                'The PDO MySQL driver is not enabled. Enable the pdo_mysql PHP extension.'
+            );
+        }
+
+
         try {
-            $this->conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-            // set the PDO error mode to exception
+                $this->conn = new PDO(
+                "mysql:host=$servername;port=$port;dbname=$dbname;charset=utf8mb4",
+                $username,
+                $password
+            );
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            throw new \RuntimeException('Database connection failed.', 0, $e);
         }
     }
 
